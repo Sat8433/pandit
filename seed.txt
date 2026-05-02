@@ -1,0 +1,29 @@
+
+   INFO  Seeding database.  
+
+  Database\Seeders\PoojaSeeder  RUNNING  
+  Database\Seeders\PoojaSeeder  95 ms DONE  
+
+  Database\Seeders\PanditSeeder  RUNNING  
+
+   Illuminate\Database\QueryException 
+
+  SQLSTATE[HY000]: General error: 1 table pandits has no column named experience (Connection: sqlite, Database: database/panditbooking.sqlite, SQL: insert into "pandits" ("user_id", "experience", "languages", "specialization", "bio", "phone", "whatsapp", "address", "city", "state", "pincode", "latitude", "longitude", "is_verified", "is_active", "updated_at", "created_at") values (2, 15, Hindi, English, Sanskrit, "Satyanarayan, Griha Pravesh, Marriage Poojas", Experienced pandit with 15 years of practice in traditional Hindu ceremonies. Specialized in Satyanarayan and Griha Pravesh poojas., +91 9876543210, +91 9876543210, 123 Temple Street, Spiritual Area, Mumbai, Maharashtra, 400001, 19.076, 72.8777, 1, 1, 2026-04-04 15:24:27, 2026-04-04 15:24:27))
+
+  at vendor\laravel\framework\src\Illuminate\Database\Connection.php:838
+    834▕             $exceptionType = $this->isUniqueConstraintError($e)
+    835▕                 ? UniqueConstraintViolationException::class
+    836▕                 : QueryException::class;
+    837▕ 
+  ➜ 838▕             throw new $exceptionType(
+    839▕                 $this->getNameWithReadWriteType(),
+    840▕                 $query,
+    841▕                 $this->prepareBindings($bindings),
+    842▕                 $e,
+
+  1   vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+      PDOException::("SQLSTATE[HY000]: General error: 1 table pandits has no column named experience")
+
+  2   vendor\laravel\framework\src\Illuminate\Database\Connection.php:578
+      PDO::prepare("insert into "pandits" ("user_id", "experience", "languages", "specialization", "bio", "phone", "whatsapp", "address", "city", "state", "pincode", "latitude", "longitude", "is_verified", "is_active", "updated_at", "created_at") values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)")
+

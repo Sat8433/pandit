@@ -1,0 +1,25 @@
+
+   INFO  Seeding database.  
+
+
+   Illuminate\Database\UniqueConstraintViolationException 
+
+  SQLSTATE[23000]: Integrity constraint violation: 19 UNIQUE constraint failed: users.email (Connection: sqlite, Database: database/panditbooking.sqlite, SQL: insert into "users" ("name", "email", "email_verified_at", "password", "remember_token", "user_type", "updated_at", "created_at") values (Admin User, admin@panditbooking.com, 2026-04-04 15:25:26, $2y$12$qzQqQ1n91XXteqlTd/rrJudCnmcxByJk4d168BPxpQ1cWSeYQegNS, FwXuvaQomi, admin, 2026-04-04 15:25:26, 2026-04-04 15:25:26))
+
+  at vendor\laravel\framework\src\Illuminate\Database\Connection.php:838
+    834???             $exceptionType = $this->isUniqueConstraintError($e)
+    835???                 ? UniqueConstraintViolationException::class
+    836???                 : QueryException::class;
+    837??? 
+  ??? 838???             throw new $exceptionType(
+    839???                 $this->getNameWithReadWriteType(),
+    840???                 $query,
+    841???                 $this->prepareBindings($bindings),
+    842???                 $e,
+
+  1   vendor\laravel\framework\src\Illuminate\Database\Connection.php:584
+      PDOException::("SQLSTATE[23000]: Integrity constraint violation: 19 UNIQUE constraint failed: users.email")
+
+  2   vendor\laravel\framework\src\Illuminate\Database\Connection.php:584
+      PDOStatement::execute()
+
