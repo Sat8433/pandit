@@ -19,7 +19,7 @@ return new class extends Migration
             $table->decimal('unit_price', 10, 2);
             $table->decimal('total_price', 10, 2);
             $table->boolean('is_kit_item')->default(false);
-            $table->foreignId('kit_id')->nullable()->constrained()->onDelete('set null');
+            $table->foreignId('kit_id')->nullable()->constrained('samagri_kits')->onDelete('set null');
             $table->timestamps();
         });
     }

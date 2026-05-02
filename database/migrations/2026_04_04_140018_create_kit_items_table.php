@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('kit_items', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('kit_id')->constrained()->onDelete('cascade');
+            $table->foreignId('kit_id')->constrained('samagri_kits')->onDelete('cascade');
             $table->foreignId('samagri_id')->constrained('samagri_items')->onDelete('cascade');
             $table->decimal('quantity', 10, 2);
             $table->timestamps();
